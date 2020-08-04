@@ -1,33 +1,40 @@
 $(document).ready(function(){
 
-    var cityName = prompt("Enter city name: ");
-
-    var weatherURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=9cb706456cc29e11df0385d8eb8de0f8";
-    
-
-    $.ajax({
-        url: weatherURL,
-        method: "GET",
-    }).then(function(response) {
-        console.log("city: " + response.city.name);
-        console.log("Current Temp: " + response.list[0].main.temp);
-        console.log("Feels_like: " + response.list[0].main.feels_like);
-        console.log("Temp_min: " + response.list[0].main.temp_min);
-        console.log("Temp_max: " + response.list[0].main.temp_max);
-        var results = response.list[0];
-        console.log(results);
-        var tempDiv = $("<div>");
-        var p = $("<p>").text("city: " + response.city.name);
-        var p = $("<p>").text("Current Temp: " + results.main.temp);
-        var p = $("<p>").text("Feels_like: " + results.main.feels_like);
-        var p = $("<p>").text("Temp_min: " + results.main.temp_min);
-        var p = $("<p>").text("Temp_max: " + results.main.temp_max);
-        tempDiv.append(p);
-        $("#temp-goes-here").append(tempDiv);
-
+    $("#searchBtn").click(function(){
+        var cityName = $("#city").val();
+        console.log(cityName);
+        var weatherURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=9cb706456cc29e11df0385d8eb8de0f8";
+        $.ajax({
+            url: weatherURL,
+            method: "GET",
+        }).then(function(response) {
+            var tempResults = response.list[0]; 
+            var lat = response.city.coord.lat;
+            var lon = response.city.coord.lon;
+            console.log(lat);
+            console.log(lon);
+            
+            var uv = getUV(lat, lon);
+            console.log(uv);
+            var tempDiv = $("<div>");
+            var hCity = $("<h2>").text(response.city.name);
+            var pTemp = $("<p>").text("Temperature: " + tempResults.main.temp);
+            var pHum = $("<p>").text("Humidity: " + tempResults.main.humidity);
+            var pWind = $("<p>").text("Humidity: " + tempResults.wind.speed);
+            $("#city").empty();
+            tempDiv.append(hCity, pTemp, pHum, pWind);
+            $("#temp-goes-here").append(tempDiv);
+            
+        });
     });
-  
-
-
-
+    
+    function getUV(lat, lon){
+        uvUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=9cb706456cc29e11df0385d8eb8de0f8";
+        $.ajax({
+            url: uvUrl,
+            method: "GET",
+        }).then(function(response) {
+            return response.value;
+        });
+    }
 });

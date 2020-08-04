@@ -1,5 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
 h1{
     background-color: darkslategray;
     color: white;
     text-align: center;
 }
+.clearfix::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+  
+#city{
+    float: left;
+}
+#temp-goes-here {
+    float: left;
+}
+  
