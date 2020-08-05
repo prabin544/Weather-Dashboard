@@ -7,20 +7,22 @@
     <title>Weather Forecast</title>
 </head>
 <body>
-    <div class="container"></div>
+    <div class="container">
         <div class="row">
             <h1>Weather Dashboard</h1>
         </div>
 
         <div class="row">
-            <div class="col-3">
-                <div class="search">
+            <aside>
+                <div class="col-3">
                     <input type="text" id="city" placeholder="Search for cities..">
+                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
                     <button type="button" id="searchBtn" class="btn btn-secondary btn-sm fa fa-search">Search</button>
                 </div>
-            </div>
-            <div class="col-9" id="temp-goes-here">
-            </div>
+            </aside>
+            <main>
+                <div class="col-9" id="temp-goes-here"></div>
+            </main>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

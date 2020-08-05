@@ -1,11 +1,15 @@
 * {
     box-sizing: border-box;
 }
-
+body{
+    background-color: lightgray;
+}
 h1{
     background-color: darkslategray;
     color: white;
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .clearfix::after {
     content: " ";
@@ -13,10 +17,11 @@ h1{
     clear: both;
 }
   
-#city{
+aside{
     float: left;
 }
-#temp-goes-here {
+main {
+    margin-left: 200px;
     float: left;
 }
   
