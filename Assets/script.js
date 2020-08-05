@@ -12,8 +12,10 @@ $(document).ready(function(){
             var tempResults = response.list[0];
             var lat = response.city.coord.lat;
             var lon = response.city.coord.lon;
+
             var uv = getUV(lat, lon);
             console.log(uv);
+
             var tempDiv = $("<div>");
             var hCity = $("<h2>").text(response.city.name);
             var pTemp = $("<p>").text("Temperature: " + tempResults.main.temp + " \u00B0F");
@@ -39,5 +41,13 @@ $(document).ready(function(){
                 console.log(response.value);
                 return response.value;
             });
+        }
+
+        function weatherIcon(){
+            
+        }
+
+        function fiveDayForecast(){
+
         }
 });
