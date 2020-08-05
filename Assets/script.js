@@ -14,19 +14,19 @@ $(document).ready(function(){
             var lon = response.city.coord.lon;
 
             var uv = getUV(lat, lon);
-            console.log(uv);
 
             var tempDiv = $("<div>");
             var hCity = $("<h2>").text(response.city.name);
             var pTemp = $("<p>").text("Temperature: " + tempResults.main.temp + " \u00B0F");
             var pHum = $("<p>").text("Humidity: " + tempResults.main.humidity + " %");
             var pWind = $("<p>").text("Humidity: " + tempResults.wind.speed + " MPH");
-            var pIcon = $("<p>").text(tempResults.weather[0].icon);
-            var iconurl = "http://openweathermap.org/img/w/" + pIcon + ".png";
-            $('#wicon').attr('src', iconurl);
+            var pWind = $("<p>").text("Humidity: " + tempResults.wind.speed + " MPH");
+            var pUIndex = $("<p>").text("UV Index: " + uv);
+            // var iconurl = "http://openweathermap.org/img/w/" + pIcon + ".png";
+            // $('#wicon').attr('src', iconurl);
             
             $("#temp-goes-here").empty();
-            tempDiv.append(hCity, pTemp, pHum, pWind);
+            tempDiv.append(hCity, pTemp, pHum, pWind, pUIndex);
             $("#temp-goes-here").append(tempDiv);
             
         });
@@ -44,7 +44,7 @@ $(document).ready(function(){
         }
 
         function weatherIcon(){
-            
+
         }
 
         function fiveDayForecast(){
