@@ -13,7 +13,7 @@ $(document).ready(function(){
             var lat = response.city.coord.lat;
             var lon = response.city.coord.lon;
 
-            var uv = getUV(lat, lon);
+            getUV(lat, lon);
 
             var tempDiv = $("<div>");
             var hCity = $("<h2>").text(response.city.name);
@@ -21,7 +21,7 @@ $(document).ready(function(){
             var pHum = $("<p>").text("Humidity: " + tempResults.main.humidity + " %");
             var pWind = $("<p>").text("Humidity: " + tempResults.wind.speed + " MPH");
             var pWind = $("<p>").text("Humidity: " + tempResults.wind.speed + " MPH");
-            var pUIndex = $("<p>").text("UV Index: " + uv);
+            var pUIndex = $("<p>").text("UV Index: Loading....").addClass("uvClass");
             // var iconurl = "http://openweathermap.org/img/w/" + pIcon + ".png";
             // $('#wicon').attr('src', iconurl);
             
@@ -39,7 +39,8 @@ $(document).ready(function(){
                 method: "GET",
             }).then(function(response) {
                 console.log(response.value);
-                return response.value;
+                $(".uvClass").text("UV Index: " + response.value)
+
             });
         }
 
