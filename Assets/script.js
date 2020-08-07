@@ -4,7 +4,7 @@ $(document).ready(function(){
         var cityName = $("#city").val();
         $("#city").empty();
         console.log(cityName);
-        var weatherURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=9cb706456cc29e11df0385d8eb8de0f8";
+        var weatherURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=9cb706456cc29e11df0385d8eb8de0f8";
         $.ajax({
             url: weatherURL,
             method: "GET",
@@ -33,7 +33,7 @@ $(document).ready(function(){
     });
     
         function getUV(lat, lon){
-            uvUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=9cb706456cc29e11df0385d8eb8de0f8";
+            uvUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=9cb706456cc29e11df0385d8eb8de0f8";
             $.ajax({
                 url: uvUrl,
                 method: "GET",
