@@ -13,7 +13,7 @@ h1{
 }
 .clearfix::after {
     content: " ";
-    display: block;
+    display: inline-block;
     clear: both;
 }
   
@@ -22,6 +22,9 @@ aside{
 }
 main {
     margin-left: 200px;
+    float: left;
+}
+#city, #forecast-goes-here-0, #forecast-goes-here-1, #forecast-goes-here-2, #forecast-goes-here-3, #forecast-goes-here-4{
     float: left;
 }
   
