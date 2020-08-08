@@ -21,10 +21,24 @@ aside{
     float: left;
 }
 main {
-    margin-left: 200px;
-    float: left;
+    margin-left: 500px;
+
 }
-#city, #forecast-goes-here-0, #forecast-goes-here-1, #forecast-goes-here-2, #forecast-goes-here-3, #forecast-goes-here-4{
+
+#forecast-goes-here-0, #forecast-goes-here-1, #forecast-goes-here-2, #forecast-goes-here-3, #forecast-goes-here-4{
     float: left;
+    margin-left: 20px;
+    background-color: rgb(46, 46, 241);
+    color: white;
+    font: icon;
+    width: 200px;
+    text-align: center;
+    line-height: 50px;
 }
+
+.card-group{
+    margin-left: 500px;
+}
+
+
   

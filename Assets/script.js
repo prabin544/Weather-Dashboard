@@ -19,11 +19,9 @@ $(document).ready(function(){
             getUV(lat, lon);
 
             var tempDiv = $("<div>");
-            // weatherIcon(response);
 
             var wiconCode = response.weather[0].icon;
             var iconurl = "http://openweathermap.org/img/w/" + wiconCode + ".png";
-            // $("#wicon").attr('src', iconurl);
 
             var hCity = $("<h2>").text(response.name + " " + currentDate );
             var iconImg = $("<img>").attr("src", iconurl);
@@ -80,10 +78,10 @@ $(document).ready(function(){
 
                     var iconImg = $("<img>").attr("src", iconurl);
 
-                    var pTemp = $("<p>").text("Temperature: " + result.main.temp + " \u00B0F");
+                    var pTemp = $("<p>").text("Temp: " + result.main.temp + " \u00B0F");
                     var pHum = $("<p>").text("Humidity: " + result.main.humidity + " %");
 
-                    $("#forecast-goes-here-"+i).append(iconImg,pHum,pTemp);
+                    $("#forecast-goes-here-"+i).append(iconImg,pTemp,pHum);
                     
                 }
 
