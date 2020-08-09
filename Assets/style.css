@@ -21,7 +21,7 @@ aside{
     float: left;
 }
 main {
-    margin-left: 500px;
+    margin-left: 325px;
 
 }
 
@@ -31,13 +31,14 @@ main {
     background-color: rgb(46, 46, 241);
     color: white;
     font: icon;
-    width: 200px;
+    font-size: small;
+    width: 150px;
     text-align: center;
     line-height: 50px;
 }
 
 .card-group{
-    margin-left: 500px;
+    margin-left: 300px;
 }
 
 

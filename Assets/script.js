@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     var currentDate = moment().format("YYYY/MM/DD");
     console.log(currentDate);
-    
+        
     $("#searchBtn").click(function(){
         var cityName = $("#city").val();
         var city = $("<li>").text(cityName);
@@ -43,6 +43,7 @@ $(document).ready(function(){
             $("#temp-goes-here").append(tempDiv);
 
         fiveDayForecast(cityName);
+        nextFiveDays();
             
         });
     });
@@ -86,5 +87,17 @@ $(document).ready(function(){
                 }
 
             });
+        }
+
+        function nextFiveDays(){
+            for (let i = 0; i < 5; i++) {
+                var dateArray = [];
+                for (let i = 1; i < 6; i++){
+                    dateArray.push(moment().add('days', i).format("YYYY/MM/DD"));
+                }
+                console.log(dateArray);
+                $("#forecast-goes-here-"+i).append(dateArray[i]);
+                
+            }
         }
 });
