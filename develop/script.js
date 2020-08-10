@@ -31,8 +31,7 @@ $(document).ready(function(){
             hCity.append(iconImg);
             var pTemp = $("<p>").text("Temperature: " + response.main.temp + " \u00B0F");
             var pHum = $("<p>").text("Humidity: " + response.main.humidity + " %");
-            var pWind = $("<p>").text("Humidity: " + response.wind.speed + " MPH");
-            var pWind = $("<p>").text("Humidity: " + response.wind.speed + " MPH");
+            var pWind = $("<p>").text("Wind Speed: " + response.wind.speed + " MPH");
             var pUIndex = $("<p>").text("UV Index: Loading....").addClass("uvClass");
 
             tempDiv.append(hCity, pTemp, pHum, pWind, pUIndex);
@@ -79,8 +78,7 @@ $(document).ready(function(){
             hCity.append(iconImg);
             var pTemp = $("<p>").text("Temperature: " + response.main.temp + " \u00B0F");
             var pHum = $("<p>").text("Humidity: " + response.main.humidity + " %");
-            var pWind = $("<p>").text("Humidity: " + response.wind.speed + " MPH");
-            var pWind = $("<p>").text("Humidity: " + response.wind.speed + " MPH");
+            var pWind = $("<p>").text("Wind Speed: " + response.wind.speed + " MPH");
             var pUIndex = $("<p>").text("UV Index: Loading....").addClass("uvClass");
             
 
