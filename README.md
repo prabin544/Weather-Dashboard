@@ -7,3 +7,5 @@
     UV Index
 # The cities will be displayed in front page as searched cities. 
 # when the browser is reloaded, it will display current and forecast weather of last searched city. 
+# this application can be accesed at https://prabin544.github.io/Weather-Dashboard/.
+![Alt text](/Assets/initial.PNG?raw=true "Initial Page")
